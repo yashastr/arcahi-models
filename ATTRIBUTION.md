@@ -21,13 +21,34 @@ set), converted and compiled to CoreML `.mlmodelc` bundles (CoreML set), and the
 parameters were extracted to NumPy files. **Changes made by Arcahi:** none; names only, as
 in the README.
 
-The original models:
+The original models, one entry each:
 
-| Original model | By | Licence |
-|---|---|---|
-| [pyannote/segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0) | pyannote | MIT |
-| [pyannote/wespeaker-voxceleb-resnet34-LM](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM), pyannote's packaging of the [WeSpeaker](https://github.com/wenet-e2e/wespeaker) VoxCeleb ResNet34-LM speaker embedding | pyannote, from WeSpeaker | CC BY 4.0 |
-| [pyannote/speaker-diarization-community-1](https://huggingface.co/pyannote/speaker-diarization-community-1) (the pipeline, its PLDA parameters) | pyannote | CC BY 4.0 |
+- **segmentation-3.0** by pyannote (https://huggingface.co/pyannote/segmentation-3.0),
+  licensed under the MIT licence, "Copyright (c) 2023 CNRS". Full text:
+  [LICENSE-MIT.txt](LICENSE-MIT.txt).
+  - Changes: Converted to safetensors and CoreML formats by avencera
+    (https://huggingface.co/avencera/speakrs-models, revision
+    `67f963b6a1d94fcd4678948237b3cc8bd69bf1d8`). Not otherwise modified. Arcahi makes no
+    changes.
+- **wespeaker-voxceleb-resnet34-LM** by pyannote
+  (https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM), licensed under CC BY 4.0
+  (https://creativecommons.org/licenses/by/4.0/). Original model from the WeSpeaker project
+  (Wang et al., ICASSP 2023).
+  - Changes: Converted to safetensors and CoreML formats by avencera
+    (https://huggingface.co/avencera/speakrs-models, revision
+    `67f963b6a1d94fcd4678948237b3cc8bd69bf1d8`). Not otherwise modified. Arcahi makes no
+    changes.
+  - Provided as is, without warranties, as stated in the licence.
+- **speaker-diarization-community-1** by pyannote
+  (https://huggingface.co/pyannote/speaker-diarization-community-1), licensed under CC BY 4.0
+  (https://creativecommons.org/licenses/by/4.0/). The PLDA and clustering files come from it.
+  - Changes: Converted to safetensors and CoreML formats by avencera
+    (https://huggingface.co/avencera/speakrs-models, revision
+    `67f963b6a1d94fcd4678948237b3cc8bd69bf1d8`). Not otherwise modified. Arcahi makes no
+    changes.
+  - Provided as is, without warranties, as stated in the licence.
+
+The full CC BY 4.0 text: [LICENSE-CC-BY-4.0.txt](LICENSE-CC-BY-4.0.txt).
 
 ### Files
 
@@ -47,16 +68,10 @@ Each `.mlmodelc` bundle is four files: `model.mil`, `coremldata.bin`,
 `weights/weight.bin` and `analytics/coremldata.bin`. Each file's size and SHA-256 are in the
 release's `SHA256SUMS` and pinned in the app.
 
-### Notice for CC BY 4.0 files
+## Citations
 
-These files are shared under the Creative Commons Attribution 4.0 International licence,
-https://creativecommons.org/licenses/by/4.0/. Credit: pyannote (pyannote.audio, the
-community-1 pipeline and its WeSpeaker embedding packaging), the WeSpeaker project, and
-avencera (speakrs-models, the exports and conversions). No warranties are given.
+The entries from the speaker-diarization-community-1 model card:
 
-### Notice for MIT files
+<!-- Plaquet23, Wang2023, Landini2022: to be pasted verbatim from the model card -->
 
-`pyannote/segmentation-3.0` is licensed under the MIT licence, as its Hugging Face model
-card states. Its model card is behind Hugging Face's access form, so its copyright line and
-the full MIT text are not copied here yet; they will be added by pull request, and the app's
-About screen carries them. The MIT licence: https://opensource.org/license/mit.
+Training and tuning made possible thanks to GENCI on the Jean Zay supercomputer.
